@@ -11,14 +11,20 @@
 <body>
   <h1>Welcome to Super Retro Chat</h1>
 
+  <form id="set-username-form">
+    <input id="username-input" type="text"/>
+    <button type="submit">save username</button>
+  </form>
+
   <form id="send-message-form">
     <input id="message-input" type="text"/>
     <button type="submit">send message</button>
   </form>
 
-  <div id="messageBox"></div>
+  <div id="messagesArea"></div>
   
 </body>
 <script src="/socket.io/socket.io.js"></script>
+<script src="/js/models/chat-message.js"></script>
 <script src='/js/main.js'></script>
 </html>

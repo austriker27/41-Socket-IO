@@ -11,7 +11,7 @@ io.on('connection', (socket) => {
   console.log("JOINED", socket.id);
 
   socket.on('disconnect', () => {
-    console.log("DISCONNECTED", socket, id);
+    console.log("DISCONNECTED", socket.id);
   });
 
   socket.on('send-message', (data) => {

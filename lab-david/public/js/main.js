@@ -6,16 +6,12 @@ const socket = io();
 console.log('ID:', socket.id)
 
 
-// <form id="send-message-form">
-// <input id="message-input" type="text"/>
-// <button type="submit">send message</button>
-// </form>
-
-// <div id="messageBox"></div>
-
+//-------------------------------------------------------------
+// HANDLE MESSAGES
+//-------------------------------------------------------------
 let sendMessageForm = document.getElementById('send-message-form');
 let messageInput = document.getElementById('message-input');
-let messagesContainer = document.getElementById('messagesBox');
+let messagesContainer = document.getElementById('messagesArea');
 
 sendMessageForm.addEventListener('submit', (event) => {
   event.preventDefault();
@@ -26,6 +22,18 @@ sendMessageForm.addEventListener('submit', (event) => {
 socket.on('receive-message', (data) => {
   console.log('RECEIVED:', data)
   let newDiv = document.createElement('div');
-  newDiv.innerHTML = data.message;
-  messagesContainer.appendChild(newDiv);
+  newDiv.innerHTML = data.message
+  messagesArea.appendChild(newDiv);
+})
+
+//-------------------------------------------------------------
+// HANDLE USERNAME
+//-------------------------------------------------------------
+let sendUsernameForm = document.getElementById('send-username-form');
+let usernameInput = document.getElementById('username-input');
+
+sendUsernameForm.addEventListener('submit', (event) => {
+  event.preventDefault();
+  let username = usernameInput.value;
+  socket.emit('send-username', {username});
 })
