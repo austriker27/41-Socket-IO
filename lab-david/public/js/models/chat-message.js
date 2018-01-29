@@ -1,12 +1,12 @@
 // chat messages have the following  : username, message, timestamp
 
-class Messages {
+class ChatMessage {
   constructor(message){
-    this.username = username;
-    this.data = data;
-    this.timeStamp = timeStamp;
+    this.username = message.username;
+    this.data = message.data;
+    this.timeStamp = message.timeStamp;
 
-    this.message = message;
+    this.message = message.message;
   }
 
 render(parentElement){
@@ -19,13 +19,13 @@ render(parentElement){
   timeStamp.classList.add('timeStamp');
   container.classList.add('message');
 
+  timeStamp.textContent = this.timeStamp;
+  username.textContent = this.username + ':';
+  message.textContent = this.message;
 
   container.appendChild(timeStamp);
   container.appendChild(username);
   container.appendChild(message);
-
-
-
 
   parentElement.appendChild(container);
   }

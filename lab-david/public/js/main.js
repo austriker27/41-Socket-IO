@@ -21,19 +21,20 @@ sendMessageForm.addEventListener('submit', (event) => {
 
 socket.on('receive-message', (data) => {
   console.log('RECEIVED:', data)
-  let newDiv = document.createElement('div');
-  newDiv.innerHTML = data.message
-  messagesArea.appendChild(newDiv);
+  
+  let message = new ChatMessage(data);
+  message.render(messagesContainer);
+
 })
 
 //-------------------------------------------------------------
 // HANDLE USERNAME
 //-------------------------------------------------------------
-let sendUsernameForm = document.getElementById('send-username-form');
+let sendUsernameForm = document.getElementById('set-username-form');
 let usernameInput = document.getElementById('username-input');
 
 sendUsernameForm.addEventListener('submit', (event) => {
   event.preventDefault();
   let username = usernameInput.value;
-  socket.emit('send-username', {username});
+  socket.emit('set-username', {username});
 })
