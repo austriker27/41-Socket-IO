@@ -4,8 +4,10 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
   <!-- emoji CSS link -->
   <link href="https://afeld.github.io/emoji-css/emoji.css" rel="stylesheet">
+  <!-- font awesome cdn -->
   <script defer src="https://use.fontawesome.com/releases/v5.0.0/js/all.js"></script>
 
   <!-- FONTS -->
@@ -16,31 +18,54 @@
   <!-- STYLE SHEETS -->
   <link href="./styles.css" rel="stylesheet">
   <link href="./background.css" rel="stylesheet">
+  <link href="./bulma.css" rel="stylesheet">
 
-  
   <title>Super Chat</title>
 </head>
 
 
 <body>
-  <header>
-    <h1 class="title">Welcome to Super Retro Chat</h1>
-    <img src="assets/undraw_chat_1wo5.svg" alt="Mail-icon">
+  <!-- <nav class="navbar" role="navigation" aria-label="main navigation">
+      <div class="navbar-brand">
+        <a class="navbar-item" href="#">
+          <img src="assets/undraw_chat_1wo5.svg" alt="This page" width="112" height="28">
+        </a>
+    
+        <button class="button navbar-burger">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </nav> -->
+  <header class="hero">
+    <div class="hero-body">
+      <div class="container">
+        <h1 class="title is-1">Welcome to Super Retro Chat</h1>
+        <i class="em em-boom"></i>
+        <i class="em em-e-mail"></i>
+        <img src="assets/undraw_chat_1wo5.svg" alt="Mail-icon">
+      </div>
+    </div>
+    
   </header>
 
   <div class="chat-background">
     <div id="messagesArea"></div>
 
-    <form id="set-username-form">
-        <input id="username-input" type="text"/>
-        <button class="button is-rounded" type="submit">set username</button>
-      </form>
+    <div class="formSection">
+      <form id="set-username-form">
+          <input id="username-input" class="input is-rounded" type="text"/>
+          <button class="button">set <i class="fa fa-user" aria-hidden="true"></i>
+          </button>
+        </form>
 
-    <form id="send-message-form">
-      <input id="message-input" type="text"/>
-      <button type="submit">send message<i class="em em-e-mail"></i></i>
-      </button>
-    </form>
+      <form id="send-message-form">
+        <input id="message-input" class="input is-rounded" type="text"/>
+        <button class="button" type="submit">send <i class="fa fa-paper-plane" aria-hidden="true"></i>
+        </button>
+      </form>
+    </div>  
   </div>
   
 </body>
