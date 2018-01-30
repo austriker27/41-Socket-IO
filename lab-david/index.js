@@ -12,7 +12,7 @@ const USERS = {};
 
 io.on('connection', (socket) => {
   USERS[socket.id] = {};
-  USERS[socket.id].username = this.username;
+  USERS[socket.id].username = 'USER';
 
   socket.on('disconnect', () => {
     console.log('DISCONNECTED', socket.id);
