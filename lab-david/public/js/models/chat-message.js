@@ -21,7 +21,23 @@ class ChatMessage {
 
     timeStamp.textContent = this.timeStamp + ' ';
     username.textContent = this.username + ': ';
-    message.textContent = this.message;
+
+
+    //<i class="em-svg em---1" id="thumbsUp"></i>
+    //<i class="em-svg em--1" id="thumbsDown"></i>
+    if (this.message === 'thumbsUp') {
+      let ii = document.createElement('i');
+      ii.classList.add('em-svg')
+      ii.classList.add('em---1')
+      message.appendChild(ii)
+    } else if (this.message === 'thumbsDown') {
+      let ii = document.createElement('i');
+      ii.classList.add('em-svg')
+      ii.classList.add('em--1')
+      message.appendChild(ii)
+    } else {
+      message.textContent = this.message;
+    }
 
     container.appendChild(timeStamp);
     container.appendChild(username);

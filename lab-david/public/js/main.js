@@ -31,15 +31,13 @@ socket.on('receive-message', (data) => {
 
 upVote.addEventListener('click', (event) => {
   event.preventDefault();
-  let message = {upVote};
-  socket.emit('send-message', {message});
+  socket.emit('send-message', {message: 'thumbsUp'});
 });
 
 
 downVote.addEventListener('click', (event) => {
   event.preventDefault();
-  let message = downVote;
-  socket.emit('send-message', {message});
+  socket.emit('send-message', {message: 'thumbsDown'});
 });
 
 //-------------------------------------------------------------
