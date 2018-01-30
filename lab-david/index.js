@@ -4,6 +4,7 @@ let express = require('express');
 let app = express();
 let http = require('http').Server(app);
 let io = require('socket.io')(http);
+let moment = require('moment');
 
 app.use(express.static('./public'))
 
@@ -19,7 +20,7 @@ io.on('connection', (socket) => {
 
   socket.on('send-message', (data) => {
     data.username = USERS[socket.id].username
-    data.timeStamp = new Date();
+    data.timeStamp = moment().format('MMMM Do YYYY, h:mm:ss a');
 
     console.log('MESSAGE:', data.message)
     io.emit('receive-message', data)

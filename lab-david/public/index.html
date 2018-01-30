@@ -6,22 +6,42 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <!-- emoji CSS link -->
   <link href="https://afeld.github.io/emoji-css/emoji.css" rel="stylesheet">
+  <script defer src="https://use.fontawesome.com/releases/v5.0.0/js/all.js"></script>
+
+  <!-- FONTS -->
+  <link href="https://fonts.googleapis.com/css?family=Metrophobic" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Ubuntu:300,300i,400,400i,500,500i,700,700i" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Audiowide" rel="stylesheet">
+
+  <!-- STYLE SHEETS -->
+  <link href="./styles.css" rel="stylesheet">
+  <link href="./background.css" rel="stylesheet">
+
+  
   <title>Super Chat</title>
 </head>
+
+
 <body>
-  <h1>Welcome to Super Retro Chat</h1>
+  <header>
+    <h1 class="title">Welcome to Super Retro Chat</h1>
+    <img src="assets/undraw_chat_1wo5.svg" alt="Mail-icon">
+  </header>
 
-  <form id="set-username-form">
-    <input id="username-input" type="text"/>
-    <button type="submit">save username</button>
-  </form>
+  <div class="chat-background">
+    <div id="messagesArea"></div>
 
-  <form id="send-message-form">
-    <input id="message-input" type="text"/>
-    <button type="submit">send message</button>
-  </form>
+    <form id="set-username-form">
+        <input id="username-input" type="text"/>
+        <button class="button is-rounded" type="submit">set username</button>
+      </form>
 
-  <div id="messagesArea"></div>
+    <form id="send-message-form">
+      <input id="message-input" type="text"/>
+      <button type="submit">send message<i class="em em-e-mail"></i></i>
+      </button>
+    </form>
+  </div>
   
 </body>
 <script src="/socket.io/socket.io.js"></script>
